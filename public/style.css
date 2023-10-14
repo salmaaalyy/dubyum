@@ -1,0 +1,46 @@
+nav {
+    background-color:rgb(165, 120, 198);
+    text-align: center;
+}
+.navbar-nav{
+    text-align: center;
+}
+.navbar-brand{
+    padding-right: 25%;
+}
+.nav-item{
+    padding: 0 10% 0 15%;
+}
+#searchbar{
+    padding: 25% 10% 25% 10%;
+}
+#explore, #locations{
+    padding:0 5% 5% 5%;
+    text-align: center;
+}
+#explore, #locations .card{
+    border:none;
+}
+#explore, #locations .card-title{
+    padding-top: 2%;
+}
+#explore, #locations .card-link{
+    text-decoration: none;
+}
+/* .hidden{
+    visibility: hidden;
+} */
+
+#leaderboard{
+    text-align: center;
+    padding-bottom: 5%;
+}
+footer{
+    padding: 2% 0 2% 0;
+    background-color:rgb(192, 167, 211);
+    text-align: center;
+}
+footer .link{
+    text-decoration: none;
+    color:rgb(64, 9, 83);
+}

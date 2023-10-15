@@ -16,7 +16,7 @@ nav{
     /* position: absolute; */
     /* z-index: 1; */
 }
-.carousel{
+/* .carousel{
     position: absolute;
     display: flex;
     overflow: hidden;
@@ -28,7 +28,7 @@ nav{
 .carousel img {
     object-fit: cover;
     opacity: 50%;
-}
+} */
 #explore, #locations, #leaderboard, #connect, #result{
     padding:5% 5% 5% 5%;
     text-align: center;
@@ -49,8 +49,8 @@ nav{
     }
 }
 #explore .card img{
-    border-radius:  10%;
-    border-width: 2px solid rgb(64, 9, 83);
+    border-radius:  7%;
+    border: 2px solid rgb(105, 17, 134);
 }
 .hidden{
     display: none;

@@ -202,6 +202,18 @@
     connectView.classList.add("hidden");
 
     // event listeners for diff cuisine pages
+    let indianView = document.getElementById("indian");
+    indianView.addEventListener("click", getCuisine);
+    let chineseView = document.getElementById("chinese");
+    chineseView.addEventListener("click", getCuisine);
+    let middleasternView = document.getElementById("middleeastern");
+    middleasternView.addEventListener("click", getCuisine);
+    let thaiView = document.getElementById("thai");
+    thaiView.addEventListener("click", getCuisine);
+    let italianView = document.getElementById("italian");
+    italianView.addEventListener("click", getCuisine);
+    let mexicanView = document.getElementById("mexican");
+    mexicanView.addEventListener("click", getCuisine);
   }
 
   function displayLocationsView(){
@@ -298,6 +310,21 @@
 
   // explore cuisine buttons and listing using card function -- salma
 
+  function getCuisine(){
+    let cuisine = this.id;
+    fetch("/dub/data?search=" + cuisine)
+      .then(statusCheck)
+      .then(resp => resp.json())
+      .then(showCuisine)
+      .catch(handleError);
+  }
+
+  function showCuisine(places){
+    clearCards();
+    let resContainer = id("res-container");
+    resContainer.classList.remove("hidden");
+    createCards(places, resContainer);
+  }
   // user search function
 
  // indivual pages on places w/ more info - update database

@@ -51,7 +51,7 @@
   }
 
   function clearResult() {
-    let cards = qsa(".card");
+    let cards = qsa(".resCard");
     for(let i = 0; i < cards.length; i++) {
         cards[i].remove();
     }
@@ -60,7 +60,7 @@
   function createCards(arr, container) {
     for(let i = 0; i < arr.length; i++) {
        let card = gen("article");
-       card.classList.add("card");
+       card.classList.add("resCard");
        card.setAttribute("id", arr[i].name);
        container.appendChild(card);
        let name = gen("p");
@@ -94,9 +94,19 @@
         card.appendChild(GF);
        }
 
-       // add event listener to card for personalized page
+       card.addEventListener("click", moreInfo);
 
     }
+  }
+
+  function moreInfo() {
+    let place = this.id;
+    console.log(place);
+    //make page with addy and maybe pic if time
+  }
+
+  function updateLeaderboard() {
+
   }
 
   function changeViews(){
@@ -179,6 +189,8 @@
     result.classList.add("hidden");
     leaderboardView.classList.remove("hidden");
     connectView.classList.add("hidden");
+
+    updateLeaderboard();
   }
 
   function displayConnectView(){
@@ -197,17 +209,29 @@
     connectView.classList.remove("hidden");
   }
 
-  function displayResult(){
-    hideAll();
+//   function displayResult(){
+//     hideAll();
 
-    let result = document.getElementById("result");
-    result.classList.remove("hidden");
-}
+//     let result = document.getElementById("result");
+//     result.classList.remove("hidden");
+// }
 
   function displaySearchResult() {
-    displayResult();
+    let result = document.getElementById("result");
+    result.classList.remove("hidden");
+
     let homeView = document.getElementById("home");
     homeView.classList.remove("hidden");
+
+    let exploreView = document.getElementById("explore");
+    let locationsView = document.getElementById("locations");
+    let leaderboardView = document.getElementById("leaderboard");
+    let connectView = document.getElementById("connect");
+
+    exploreView.classList.add("hidden");
+    locationsView.classList.add("hidden");
+    leaderboardView.classList.add("hidden");
+    connectView.classList.add("hidden");
   }
 
   function hideAll(){

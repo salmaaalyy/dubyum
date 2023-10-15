@@ -18,6 +18,8 @@
     input.addEventListener("input", enableSearch);
     let searchButton = id("search-button");
     searchButton.addEventListener("click", startSearch);
+    let userSearchB = id("search-button2");
+    userSearchB.addEventListener("click", startUserSearch);
     let filter = id("filters");
     filter.addEventListener("change", filterPlaces);
   }
@@ -32,6 +34,60 @@
             .then(resp => resp.json())
             .then(loadItems)
             .catch(handleError);
+    }
+  }
+
+  function startUserSearch() {
+    let input = id("search2");
+    let search = input.value.trim();
+    fetch("/dub/users?search=" + search)
+      .then(statusCheck)
+      .then(resp => resp.json())
+      .then(loadUsers)
+      .catch(handleError);
+  }
+
+  function findAllUsers() {
+    fetch("/dub/users")
+      .then(statusCheck)
+      .then(resp => resp.json())
+      .then(loadUsers)
+      .catch(handleError);
+  }
+
+  function loadUsers(users) {
+    clearUsers();
+    let userCont = id("users-container");
+    addUsers(users, userCont);
+  }
+
+  function addUsers(users, cont) {
+    for(let i = 0; i < users.length; i++) {
+        let userCard = gen("div");
+        let image = gen("img");
+        image.src = "...";
+        let username = gen("h3");
+        username.textContent = users[i].name;
+        let background = gen("h6");
+        background.textContent = users[i].background;
+        let spots = gen("h6");
+        spots.textContent = "top spots: " + users[i].spot1 + " " + users[i].spot2 + " " + users[i].spot3;
+        userCard.appendChild(image);
+        userCard.appendChild(username);
+        userCard.appendChild(background);
+        userCard.appendChild(spots);
+
+        userCard.setAttribute("id", "user");
+
+        cont.appendChild(userCard);
+
+    }
+  }
+
+  function clearUsers() {
+    let users = qsa("#user");
+    for(let i = 0; i < users.length; i++) {
+        users[i].remove();
     }
   }
 
@@ -267,6 +323,8 @@
     leaderboardView.classList.add("hidden");
     result.classList.add("hidden");
     connectView.classList.remove("hidden");
+
+    findAllUsers();
   }
 
 //   function displayResult(){

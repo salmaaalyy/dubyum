@@ -96,6 +96,7 @@
 
        let upvoteButton = gen("button");
        upvoteButton.textContent = "^"
+       upvoteButton.setAttribute("id", arr[i].name);
        card.appendChild(upvoteButton)
 
        upvoteButton.addEventListener("click", incrVote);
@@ -107,8 +108,14 @@
   function incrVote() {
     let place = this.id;
     console.log(place);
-    // fecth upvote and incr by 1
+    fetch("/dub/upvote?store=" + place)
+      .then(statusCheck)
+      .then(resp => resp.text())
+      .then(updateLeaderboard)
+      .catch(handleError);
   }
+
+
 
   function moreInfo() {
     let place = this.id;
@@ -270,13 +277,13 @@
     connectView.classList.add("hidden");
   }
 
-  // search bar implemnetation for users and cusine
   // filter implementation for cuisine
 
-  // leaderboard implementation
-  // CARD FUNCTION
-
   // explore cuisine buttons and listing using card function
+
+  //
+
+
 
   //
 

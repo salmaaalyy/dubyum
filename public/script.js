@@ -18,7 +18,24 @@
     input.addEventListener("input", enableSearch);
     let searchButton = id("search-button");
     searchButton.addEventListener("click", startSearch);
+    let filter = id("filters");
+    filter.addEventListener("change", filterPlaces);
   }
+
+  function filterPlaces() {
+    let filterButton = id("filters");
+    let selectedFilter = filterButton.value;
+
+    if(selectedFilter !== "filters" && selectedFilter !== "none") {
+        fetch("/dub/data?filter=" + selectedFilter)
+            .then(statusCheck)
+            .then(resp => resp.json())
+            .then(loadItems)
+            .catch(handleError);
+    }
+  }
+
+
 
  // checks if there is input in search bar - if there is search button enabled
  // so we can't search for nothing
@@ -279,9 +296,13 @@
 
   // filter implementation for cuisine
 
-  // explore cuisine buttons and listing using card function
+  // explore cuisine buttons and listing using card function -- salma
 
-  //
+  // user search function
+
+ // indivual pages on places w/ more info - update database
+
+ // styling!!
 
 
 

@@ -22,8 +22,8 @@ app.get('/dub/data', async (req, res) => {
 
     let db = await getDBConnection();
     if(filter) {
-      let query = "SELECT * FROM restaurants WHERE culture=?";
-      let cuisine = await db.all(query, filter);
+      let query = "SELECT * FROM restaurants WHERE culture LIKE ? OR halal LIKE ? OR veg LIKE ? OR GF LIKE ?";
+      let cuisine = await db.all(query, [filter, filter, filter, filter]);
       await db.close();
       res.json(cuisine);
     } else if (search) {
@@ -31,7 +31,7 @@ app.get('/dub/data', async (req, res) => {
                     "OR GF LIKE ? OR veg LIKE ? OR culture LIKE ?";
       let item = '%' + search + '%';
       let place = await db.all(query, [item, item, item, item]);
-      await db.close;
+      await db.close();
       res.json(place);
     } else {
       let query = 'SELECT * FROM restaurants';

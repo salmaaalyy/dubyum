@@ -67,8 +67,15 @@ body{
     .card-title{
         padding-top: 2%;
     }
+    .card img{
+        border: 2px solid rgb(105, 17, 134);
+    }
 }
 #explore .card img{
+    border-radius:  7%;
+    border: 2px solid rgb(105, 17, 134);
+}
+#connect .card{
     border-radius:  7%;
     border: 2px solid rgb(105, 17, 134);
 }
@@ -94,4 +101,17 @@ footer .link{
     max-width: 50%;
     align-self: center;
     padding: 2% 2% 2% 2%;
+}
+#actual-board, #res-container, #leaderboard{
+    justify-content: center;    
+    align-items: center;
+    text-align: center;
+}
+.resCard{
+    max-width: 40%;
+    border: 2px solid rgb(105, 17, 134);
+    background-color: white;
+    border-radius: 8%;
+    margin: 2% 0 2% 0;
+    padding: 1% 0 1% 0;
 }

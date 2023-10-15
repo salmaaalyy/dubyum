@@ -169,6 +169,8 @@
   }
 
   function displayHomeView(){
+    clearCards();
+
     let homeView = document.getElementById("home");
     let exploreView = document.getElementById("explore");
     let locationsView = document.getElementById("locations");
@@ -186,6 +188,7 @@
   }
 
   function displayExploreView(){
+    clearCards();
     let homeView = document.getElementById("home");
     let exploreView = document.getElementById("explore");
     let locationsView = document.getElementById("locations");
@@ -219,6 +222,8 @@
   }
 
   function displayLocationsView(){
+    clearCards();
+
     let homeView = document.getElementById("home");
     let exploreView = document.getElementById("explore");
     let locationsView = document.getElementById("locations");
@@ -236,6 +241,8 @@
 }
 
   function displayLeaderboardView(){
+    clearCards();
+
     let homeView = document.getElementById("home");
     let exploreView = document.getElementById("explore");
     let locationsView = document.getElementById("locations");
@@ -254,6 +261,8 @@
   }
 
   function displayConnectView(){
+    clearCards();
+
     let homeView = document.getElementById("home");
     let exploreView = document.getElementById("explore");
     let locationsView = document.getElementById("locations");
@@ -277,6 +286,8 @@
 // }
 
   function displaySearchResult() {
+    clearCards();
+
     let result = document.getElementById("result");
     result.classList.remove("hidden");
 

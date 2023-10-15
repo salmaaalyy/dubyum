@@ -102,16 +102,24 @@ footer .link{
     align-self: center;
     padding: 2% 2% 2% 2%;
 }
-#actual-board, #res-container, #leaderboard{
+#actual-board, #res-container, #result, #leaderboard{
     justify-content: center;    
     align-items: center;
-    text-align: center;
+    /* text-align: center;
+    display: grid;
+    place-items: center;
+
+    .hidden{
+        display: none;
+    } */
 }
 .resCard{
-    max-width: 40%;
+    max-width: 50%;
     border: 2px solid rgb(105, 17, 134);
     background-color: white;
     border-radius: 8%;
-    margin: 2% 0 2% 0;
-    padding: 1% 0 1% 0;
+    margin: 10% 10% 10% 10%;
+    padding: 5% 5% 5% 5%;
+    /* padding: 50% 50% 50% 50%; */
+    text-align: center;
 }

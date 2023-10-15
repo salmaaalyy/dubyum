@@ -212,10 +212,10 @@
     middleasternView.addEventListener("click", getCuisine);
     let thaiView = document.getElementById("Thai");
     thaiView.addEventListener("click", getCuisine);
-    let italianView = document.getElementById("Italian");
-    italianView.addEventListener("click", getCuisine);
-    let mexicanView = document.getElementById("Mexican");
-    mexicanView.addEventListener("click", getCuisine);
+    let iranianView = document.getElementById("Iranian");
+    iranianView.addEventListener("click", getCuisine);
+    let japaneseView = document.getElementById("Japanese");
+    japaneseView.addEventListener("click", getCuisine);
   }
 
   function displayLocationsView(){

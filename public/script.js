@@ -1,18 +1,9 @@
-// const slides = document.querySelectorAll('.carousel');
-// let currentSlide = 0;
-
-// function nextSlide(){
-//     slides[currentSlide].style.transform = 'translateX(-100%)';
-//     currentSlide = (currentSlide + 1) % slides.length;
-//     slides[currentSlide].style.transform = 'translateX(0)';
-// }
-// setInterval(nextSlide, 3000);
 
 (function(){
   window.addEventListener("load", init);
 
 
-  function init(){
+  function init() {
     changeViews();
     let input = id("search");
     input.addEventListener("input", enableSearch);
@@ -65,17 +56,22 @@
     for(let i = 0; i < users.length; i++) {
         let userCard = gen("div");
         let image = gen("img");
-        image.src = "...";
+        image.src = "/assets/pfp-icon.png";
         let username = gen("h3");
         username.textContent = users[i].name;
         let background = gen("h6");
         background.textContent = users[i].background;
         let spots = gen("h6");
         spots.textContent = "top spots: " + users[i].spot1 + " " + users[i].spot2 + " " + users[i].spot3;
+        let section = gen("section");
+
+
         userCard.appendChild(image);
-        userCard.appendChild(username);
-        userCard.appendChild(background);
-        userCard.appendChild(spots);
+        section.appendChild(username);
+        section.appendChild(background);
+        section.appendChild(spots);
+
+        userCard.appendChild(section);
 
         userCard.setAttribute("id", "user");
 
@@ -142,9 +138,7 @@
        let background = gen("p");
        background.textContent = arr[i].culture;
        card.appendChild(background);
-       let upvotes = gen("p");
-       upvotes.textContent = arr[i].upvotes;
-       card.appendChild(upvotes);
+
        let location = gen("p");
        location.textContent = arr[i].location;
        card.appendChild(location);
@@ -166,6 +160,10 @@
         GF.textContent = arr[i].GF;
         card.appendChild(GF);
        }
+
+       let upvotes = gen("p");
+       upvotes.textContent = arr[i].upvotes;
+       card.appendChild(upvotes);
 
        let upvoteButton = gen("button");
        upvoteButton.textContent = "^"
@@ -255,6 +253,7 @@
     expContent.classList.remove("hidden");
 
 
+
     homeView.classList.add("hidden");
     exploreView.classList.remove("hidden");
     locationsView.classList.add("hidden");
@@ -278,7 +277,7 @@
   }
 
   function displayLocationsView(){
-    clearCards();
+   clearCards();
 
     let homeView = document.getElementById("home");
     let exploreView = document.getElementById("explore");
@@ -294,6 +293,15 @@
     leaderboardView.classList.add("hidden");
     result.classList.add("hidden");
     connectView.classList.add("hidden");
+
+    let ave = id("the ave");
+    ave.addEventListener("click", getCuisine2);
+    let uvill = id("uvill");
+    uvill.addEventListener("click", getCuisine2);
+    let oncampus = id("on campus");
+    oncampus.addEventListener("click", getCuisine2);
+
+
 }
 
   function displayLeaderboardView(){
@@ -381,6 +389,27 @@
 
   // explore cuisine buttons and listing using card function -- salma
 
+  function getCuisine2(){
+    let location = this.id;
+    console.log(location);
+    fetch("/dub/data?search=" + location)
+      .then(statusCheck)
+      .then(resp => resp.json())
+      .then(locationCuisine)
+      .catch(handleError);
+  }
+
+  function locationCuisine(places){
+    clearCards();
+    let resultSection = id("result");
+    resultSection.classList.remove("hidden");
+    let resContainer = id("res-container");
+    resContainer.classList.remove("hidden");
+    let locationCont = id("location-container");
+    locationCont.classList.add("hidden");
+    createCards(places, resContainer);
+  }
+
   function getCuisine(){
     let cuisine = this.id;
     console.log(cuisine);
@@ -393,7 +422,6 @@
 
   function showCuisine(places){
     clearCards();
-    console.log("hi");
     let resultSection = id("result");
     resultSection.classList.remove("hidden");
     let resContainer = id("res-container");

@@ -1,4 +1,4 @@
-nav {
+nav{
     background-color:rgb(165, 120, 198);
     text-align: center;
 }
@@ -29,22 +29,24 @@ nav {
     object-fit: cover;
     opacity: 50%;
 }
-#explore, #locations{
-    padding:0 5% 5% 5%;
+#explore, #locations, #leaderboard, #connect, #result{
+    padding:5% 5% 5% 5%;
     text-align: center;
 }
-#explore, #locations .card{
-    border:none;
+#explore, #locations, #leaderboard {
+    .card{
+        border:none;
+    }
+    .card-link{
+        text-decoration: none;
+    }
+    .card-title{
+        padding-top: 2%;
+    }
 }
-#explore, #locations .card-title{
-    padding-top: 2%;
+.hidden{
+    display: none;
 }
-#explore, #locations .card-link{
-    text-decoration: none;
-}
-/* .hidden{
-    visibility: hidden;
-} */
 
 #leaderboard{
     text-align: center;

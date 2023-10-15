@@ -8,3 +8,7 @@ As college students, we've struggled with finding cultural comfort foods near ca
 **dubYum** is a platform where students can find their next cultural food recommendation and vote on their favorite restaurants near the University of Washington campus. Users can create their profile and find other foodies to befriend, making long-lasting relationships.
 ## How we built it
 **dubYum** was built using HTML/CSS for the frontend, a mix of JavaScript and Node backend, and SQL database.
+
+SQLite Database Screenshots
+![Screenshot (241)](https://github.com/salmaaalyy/dubyum/assets/116464321/493d04f2-8565-46c5-9bd3-c415b596dad3)
+![Screenshot (242)](https://github.com/salmaaalyy/dubyum/assets/116464321/91477241-8368-4612-98dc-8caf1bd334e1)

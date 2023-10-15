@@ -12,9 +12,9 @@ nav {
     padding: 0 10% 0 10%;
 }
 #searchbar{
-    /* padding: 25% 10% 25% 10%; */
-    position: absolute;
-    z-index: 1;
+    padding: 25% 10% 25% 10%;
+    /* position: absolute; */
+    /* z-index: 1; */
 }
 .carousel{
     position: absolute;
@@ -27,6 +27,7 @@ nav {
 }
 .carousel img {
     object-fit: cover;
+    opacity: 50%;
 }
 #explore, #locations{
     padding:0 5% 5% 5%;

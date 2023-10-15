@@ -48,6 +48,10 @@ nav{
         padding-top: 2%;
     }
 }
+#explore .card img{
+    border-radius:  10%;
+    border-width: 2px solid rgb(64, 9, 83);
+}
 .hidden{
     display: none;
 }

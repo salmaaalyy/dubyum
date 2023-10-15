@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>dub yum</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   </head>
   <body>
 	<script src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
       <script src="https://kit.fontawesome.com/4169d10bb8.js" crossorigin="anonymous"></script>
   <section>
@@ -70,7 +70,7 @@
       <div class="input-group">
         <!-- <label class="input-group-text" for="search"><i class="fa-regular fa-magnifying-glass">search</i></label> -->
         <input class="form-control mr-sm-2" id="search" type="search" placeholder="find your home away from home" aria-label="Search">
-        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">search</button>
+        <button class="btn btn-outline-primary my-2 my-sm-0" id="search-button" type="submit" disabled>search</button>
         <select id="filters">
           <option value="veggie">veggie</option>
           <option value="halal">halal</option>
@@ -217,7 +217,9 @@
   </section>
 
   <section id="result">
+    <section id="res-container">
 
+    </section>
   </section>
   <footer>
     <div class="container">

@@ -1,6 +1,5 @@
 # dubYum
-![Screenshot 2023-10-15 at 10 15 09 AM](https://github.com/salmaaalyy/dubyum/assets/84868923/04b3a0bb-8882-4ade-8278-4ad827dd104a)
-![Screenshot 2023-10-15 at 10 15 21 AM](https://github.com/salmaaalyy/dubyum/assets/84868923/df1ea3a4-3741-477b-af59-f98bde0483bb)
+Having a hard time finding you favorite cultural foods near UW? Well DubYum is here for you! Find your home away from home with a simple search! 
 
 ## Inspiration
 As college students, we've struggled with finding cultural comfort foods near campus. Relying on word of mouth for recommendations can get pretty tiresome and searching for options online can yield hundreds of results. We wanted an easier alternative to be able to search and filter restaurants based on our wants and needs, keep track of where you've been eating, and making friends with other foodies!

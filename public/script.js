@@ -43,14 +43,14 @@
   }
 
   function loadItems(places) {
-    clearResult();
+    clearCards();
     displaySearchResult();
 
     let resContainer = id("res-container");
     createCards(places, resContainer);
   }
 
-  function clearResult() {
+  function clearCards() {
     let cards = qsa(".resCard");
     for(let i = 0; i < cards.length; i++) {
         cards[i].remove();
@@ -94,19 +94,41 @@
         card.appendChild(GF);
        }
 
+       let upvoteButton = gen("button");
+       upvoteButton.textContent = "^"
+       card.appendChild(upvoteButton)
+
+       upvoteButton.addEventListener("click", incrVote);
        card.addEventListener("click", moreInfo);
 
     }
+  }
+
+  function incrVote() {
+    let place = this.id;
+    console.log(place);
+    // fecth upvote and incr by 1
   }
 
   function moreInfo() {
     let place = this.id;
     console.log(place);
     //make page with addy and maybe pic if time
+    // upvote option here
   }
 
   function updateLeaderboard() {
+    fetch("/dub/data/leaderboard")
+      .then(statusCheck)
+      .then(resp => resp.json())
+      .then(createLeaderboard)
+      .catch(handleError);
+  }
 
+  function createLeaderboard(places) {
+    clearCards();
+    let container = id("actual-board");
+    createCards(places, container);
   }
 
   function changeViews(){

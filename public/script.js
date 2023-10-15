@@ -192,6 +192,8 @@
     let leaderboardView = document.getElementById("leaderboard");
     let connectView = document.getElementById("connect");
     let result = document.getElementById("result");
+    let expContent = id("explore-container");
+    expContent.classList.remove("hidden");
 
 
     homeView.classList.add("hidden");
@@ -202,17 +204,17 @@
     connectView.classList.add("hidden");
 
     // event listeners for diff cuisine pages
-    let indianView = document.getElementById("indian");
+    let indianView = document.getElementById("Indian");
     indianView.addEventListener("click", getCuisine);
-    let chineseView = document.getElementById("chinese");
+    let chineseView = document.getElementById("Chinese");
     chineseView.addEventListener("click", getCuisine);
-    let middleasternView = document.getElementById("middleeastern");
+    let middleasternView = document.getElementById("Middle Eastern");
     middleasternView.addEventListener("click", getCuisine);
-    let thaiView = document.getElementById("thai");
+    let thaiView = document.getElementById("Thai");
     thaiView.addEventListener("click", getCuisine);
-    let italianView = document.getElementById("italian");
+    let italianView = document.getElementById("Italian");
     italianView.addEventListener("click", getCuisine);
-    let mexicanView = document.getElementById("mexican");
+    let mexicanView = document.getElementById("Mexican");
     mexicanView.addEventListener("click", getCuisine);
   }
 
@@ -312,7 +314,8 @@
 
   function getCuisine(){
     let cuisine = this.id;
-    fetch("/dub/data?search=" + cuisine)
+    console.log(cuisine);
+    fetch("/dub/data?filter=" + cuisine)
       .then(statusCheck)
       .then(resp => resp.json())
       .then(showCuisine)
@@ -321,15 +324,24 @@
 
   function showCuisine(places){
     clearCards();
+    console.log("hi");
+    let resultSection = id("result");
+    resultSection.classList.remove("hidden");
     let resContainer = id("res-container");
     resContainer.classList.remove("hidden");
+    let expContainer = id("explore-container");
+    expContainer.classList.add("hidden");
     createCards(places, resContainer);
   }
+
+
   // user search function
 
  // indivual pages on places w/ more info - update database
 
  // styling!!
+
+ // for filter edit the ids of selected to match queries use search honeslty
 
 
 
